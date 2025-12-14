@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.AdminDashboardController"
+      prefWidth="900" prefHeight="550">
+
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <Label fx:id="welcomeLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="itemNameField" promptText="Item Name"/>
+        <TextField fx:id="quantityField" promptText="Quantity"/>
+        <TextField fx:id="priceField" promptText="Price"/>
+        <Button text="Add" onAction="#handleAddItem"/>
+        <Button text="Update Selected" onAction="#handleUpdateSelected"/>
+        <Button text="Delete Selected" onAction="#handleDeleteSelected"/>
+        <Button text="Refresh" onAction="#handleRefresh"/>
+    </HBox>
+
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" prefWidth="60"/>
+            <TableColumn fx:id="nameCol" text="Item" prefWidth="250"/>
+            <TableColumn fx:id="qtyCol" text="Quantity" prefWidth="100"/>
+            <TableColumn fx:id="priceCol" text="Price" prefWidth="100"/>
+            <TableColumn fx:id="createdByCol" text="Created By" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="statusLabel"/>
+</VBox>
